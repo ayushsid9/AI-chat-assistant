@@ -4,7 +4,7 @@
 // ======================================
 
 // Backend URL
-const API_URL = "https://ai-chat-assistant-backend.onrender.com";
+const API_URL = "http://localhost:5000/chat";
 
 // DOM Elements
 const chatContainer = document.getElementById("chatContainer");
