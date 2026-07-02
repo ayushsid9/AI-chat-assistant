@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AI Assistant</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+    <!-- Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Prism CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <i class="ri-robot-2-fill"></i>
+
+                <h2>AI Assistant</h2>
+
+            </div>
+
+            <button id="newChatBtn">
+
+                <i class="ri-add-line"></i>
+
+                New Chat
+
+            </button>
+
+            <button id="clearChatBtn">
+
+                <i class="ri-delete-bin-6-line"></i>
+
+                Clear Chat
+
+            </button>
+
+            <div class="sidebar-footer">
+
+                <p>Powered by Gemini</p>
+
+            </div>
+
+        </aside>
+
+        <!-- Chat Section -->
+
+        <main class="chat-area">
+
+            <!-- Header -->
+
+            <header>
+
+                <div class="header-title">
+
+                    <h1>AI Assistant</h1>
+
+                    <span>Gemini 2.5 Flash</span>
+
+                </div>
+
+            </header>
+
+            <!-- Messages -->
+
+            <section id="chatContainer">
+
+                <div class="welcome">
+
+                    <div class="robot">
+
+                        🤖
+
+                    </div>
+
+                    <h2>Hello!</h2>
+
+                    <p>
+
+                        I'm your AI Assistant.
+
+                        Ask me anything about programming,
+
+                        JavaScript,
+
+                        React,
+
+                        Node.js,
+
+                        AI,
+
+                        or anything else.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Typing Indicator -->
+
+            <div id="typingIndicator" class="hidden">
+
+                <div class="typing">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+            <!-- Input -->
+
+            <footer>
+
+                <div class="input-container">
+
+                    <textarea
+
+                        id="userInput"
+
+                        rows="1"
+
+                        placeholder="Message AI Assistant..."
+
+                    ></textarea>
+
+                    <button id="sendBtn">
+
+                        <i class="ri-send-plane-fill"></i>
+
+                    </button>
+
+                </div>
+
+                <small>
+
+                    Press Enter to send · Shift + Enter for new line
+
+                </small>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- Prism -->
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-css.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-markup.min.js"></script>
+
+    <!-- JS -->
+
+   <script src="./js/script.js"></script>
+
+</body>
+
+</html>
