@@ -4,7 +4,7 @@
 // ======================================
 
 // Backend URL
-const API_URL = "http://localhost:5000/chat";
+const API_URL = "https://ai-chat-assistant-klvs.onrender.com/chat";
 
 // DOM Elements
 const chatContainer = document.getElementById("chatContainer");
@@ -95,57 +95,46 @@ async function sendMessage(){
 
     showTyping();
 
-    try{
+   try {
 
-        const response = await fetch(API_URL,{
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            message
+        })
+    });
 
-            method:"POST",
-
-            headers:{
-
-                "Content-Type":"application/json"
-
-            },
-
-            body:JSON.stringify({
-
-                message
-
-            })
-
-        });
-
-        const data = await response.json();
-
-        hideTyping();
-
-        createMessage(data.reply,"bot");
-
-        chatHistory.push({
-
-            sender:"bot",
-
-            text:data.reply
-
-        });
-
-        saveChat();
-
+    if (!response.ok) {
+        throw new Error(`Server Error: ${response.status}`);
     }
 
-    catch(err){
+    const data = await response.json();
 
-        hideTyping();
+    hideTyping();
 
-        createMessage(
+    createMessage(data.reply, "bot");
 
-            "❌ Unable to connect to AI server.",
+    chatHistory.push({
+        sender: "bot",
+        text: data.reply
+    });
 
-            "bot"
+    saveChat();
 
-        );
+}
+catch (err) {
 
-    }
+    console.error(err);
+
+    hideTyping();
+
+    createMessage(
+        "❌ Unable to connect to AI server.",
+        "bot"
+    );
 
 }
 
