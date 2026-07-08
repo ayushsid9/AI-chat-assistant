@@ -1,4 +1,5 @@
 backend/.env
 .env
+.renv
 .env.*
 node_modules/
